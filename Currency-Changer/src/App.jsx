@@ -3,7 +3,7 @@ import { InputBox } from './components/index'
 import './App.css'
 import useCurrencyInfo from './hooks/useCurrencyInfo';
 function App() {
-  const [amount, setAmount] = useState(0)
+  const [amount, setAmount] = useState(null)
   const [from, setFrom] = useState('usd') // from repersent current currency from which we need to convert
   const [to, setTo] = useState('inr') // to represent currency to which amount converted
   const [convertedAmount, setConvertedAmount] = useState(0); // evaluated equivalent amount of selected currnecy
@@ -81,7 +81,7 @@ function App() {
           <button 
           type='submit'
           className='w-full bg-blue-600 py-3 rounded-lg px-4 text-white'
-          >Convert {from.toUpperCase()} to {to.toLowerCase()}</button>
+          >Convert {from.toUpperCase()} to {to.toUpperCase()}</button>
         </form>
       </div>
 
