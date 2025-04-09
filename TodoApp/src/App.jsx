@@ -9,7 +9,7 @@ function App() {
   // const SeqContext = createContext({seq,setSeq});
 
   const [todos, setTodos] = useState([])
-  
+
   const addTodo = (todo) => {
     setTodos((prev) => [
       { id: Date.now(), ...todo }, ...prev
@@ -59,22 +59,22 @@ function App() {
       todos, addTodo, updateTodo, deleteTodo,
       toggleComplete
     }}>
-      <h1 className='text-center text-5xl bg-amber-300 rounded-lg mx-120 py-10'>
-        manage your tasks
-      </h1>
-      <TodoForm />
-      {
-        todos.map((todo) => (
+        <h1 className='text-center text-5xl bg-amber-300 rounded-lg mx-120 py-10'>
+          manage your tasks
+        </h1>
+        <TodoForm />
+        {
+        todos.map((todo,index) => (
 
           <div key={todo.id}>
 
 
-            <TodoItem todo={todo} />
+            <TodoItem todo={todo} index = {index+1} />
 
 
           </div>
         ))
-      }
+        }
 
     </TodoProvider>
   )
